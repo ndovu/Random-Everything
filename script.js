@@ -3,6 +3,14 @@ var excess;
 var counter = 1;
 var maximumShapes = 500;
 
+// Colours taken from here:
+// http://ethanschoonover.com/solarized
+// Thanks Ethan!
+var solarize_colours = ['#002b36', '#073642', '#586e75', '#657b83', 
+                        '#839496', '#93a1a1', '#eee8d5', '#fdf6e3', 
+                        '#b58900', '#cb4b16', '#dc322f', '#d33682', 
+                        '#6c71c4', '#268bd2', '#2aa198', '#859900'];
+
 // Use DRY principle on Math.random() method
 var makeRandom = function(range, minimum) {
   (typeof minimum == 'undefined') && (minimum = 0);
@@ -12,7 +20,7 @@ var makeRandom = function(range, minimum) {
 var makeSquareCssRandom = function() {
   return {
     background:     "rgb(" +makeRandom(255)+ "," +makeRandom(255)+ "," +makeRandom(255)+ ")",
-    opacity:        Math.random() * 0.7 + 0.1,
+    opacity:        1,
     width:          makeRandom( $('body').width() / 6 ), // Max value is 1/6 of <body> width
     height:         makeRandom( $('body').width() / 6 ),
     borderRadius:   makeRandom(100)+ "%",
